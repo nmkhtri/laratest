@@ -27,10 +27,10 @@ Route::group(['middleware' => ['auth:web' , 'CheckOperator'],'prefix' => 'operat
     Route::get('/panel','Oper\OperatorController@index');
 });
 
-//Route::group(['middleware' => ['auth:web' , 'CheckUser'],'prefix' => 'operator'],function (){
-//
-//    Route::get('/panel','User\UserController@index');
-//});
+Route::group(['middleware' => ['auth:web' , 'CheckUser'],'prefix' => 'user'],function (){
+
+    Route::get('/panel','User\UserController@index');
+});
 
 
 
