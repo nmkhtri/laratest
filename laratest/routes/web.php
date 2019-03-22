@@ -16,12 +16,28 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/developer/panel','developerController@index');
-//
+
 Route::group(['middleware' => ['auth:web' , 'CheckDeveloper'] ,'prefix' => 'developer'],function (){
 
-    Route::get('/panel','Dev\developerController@index');
+    Route::get('/panel','Dev\DeveloperController@index');
 });
+
+Route::group(['middleware' => ['auth:web' , 'CheckOperator'],'prefix' => 'operator'],function (){
+
+    Route::get('/panel','Oper\OperatorController@index');
+});
+
+//Route::group(['middleware' => ['auth:web' , 'CheckUser'],'prefix' => 'operator'],function (){
+//
+//    Route::get('/panel','User\UserController@index');
+//});
+
+
+
+
+
+
+
 
 //Auth::routes();
 

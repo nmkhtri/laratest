@@ -41,4 +41,8 @@ class User extends Authenticatable
     {
         return $this->level == 'developer' ? true : false ;
     }
+    public function isOperator()
+    {
+        return $this->level == 'operator' ? true : false;
+    }
 }
