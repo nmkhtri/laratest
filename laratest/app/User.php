@@ -37,7 +37,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function isDeveloper()
+/*    public function isDeveloper()
     {
         return $this->level == 'developer' ? true : false ;
     }
@@ -45,4 +45,8 @@ class User extends Authenticatable
     {
         return $this->level == 'operator' ? true : false;
     }
+    public function isUser()
+    {
+        return $this->level == 'user' ? true : false;
+    }*/
 }

@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+/*
 Route::group(['middleware' => ['auth:web' , 'CheckDeveloper'] ,'prefix' => 'developer'],function (){
 
     Route::get('/panel','Dev\DeveloperController@index');
@@ -30,6 +30,11 @@ Route::group(['middleware' => ['auth:web' , 'CheckOperator'],'prefix' => 'operat
 Route::group(['middleware' => ['auth:web' , 'CheckUser'],'prefix' => 'user'],function (){
 
     Route::get('/panel','User\UserController@index');
+});*/
+
+Route::group(['middleware' => ['auth:web' , 'CheckUsers']],function (){
+
+    Route::get('/home', 'HomeController@index')->name('home');
 });
 
 
@@ -59,4 +64,4 @@ Route::group(['namespace' => 'Auth'],function(){
 
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');

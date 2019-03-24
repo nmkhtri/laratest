@@ -9,6 +9,6 @@ class UserController extends Controller
 {
     public function index()
     {
-        print ('hello user');
+        return view('panel');
     }
 }
